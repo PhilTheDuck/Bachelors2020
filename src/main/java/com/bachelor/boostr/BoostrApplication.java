@@ -19,8 +19,8 @@ public class BoostrApplication {
 	@PostConstruct
 	public void initCustomerRepo() {
 		repository.saveAll(Stream.of(new Customer(555, "Svyatoslav"),
-									 new Customer(444, "Evgeniy"),
-									 new Customer(333, "Philipp")
+				new Customer(444, "Evgeniy"),
+				new Customer(333, "Philipp")
 		).collect(Collectors.toList()));
 	}
 
