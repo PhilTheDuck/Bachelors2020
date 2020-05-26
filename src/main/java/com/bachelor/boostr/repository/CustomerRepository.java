@@ -7,6 +7,6 @@ import org.springframework.data.couchbase.repository.CouchbasePagingAndSortingRe
 
 @N1qlPrimaryIndexed
 @N1qlSecondaryIndexed(indexName = "customer")
-public interface CustomerRepository extends CouchbasePagingAndSortingRepository<Customer, Integer> {
+public interface CustomerRepository extends CouchbasePagingAndSortingRepository<Customer, String> {
 
 }

@@ -20,7 +20,7 @@ public class CustomerController {
     }
 
     @GetMapping("/findCustomer/{id}")
-    public Optional<Customer> getCustomerById(@PathVariable int id){
+    public Optional<Customer> getCustomerById(@PathVariable String id){
         return repository.findById(id);
     }
 
