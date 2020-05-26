@@ -1,29 +1,27 @@
 package com.bachelor.boostr.model;
 
-import com.couchbase.client.java.repository.annotation.Field;
 import com.couchbase.client.java.repository.annotation.Id;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.couchbase.core.mapping.Document;
+import org.springframework.data.couchbase.core.mapping.id.GeneratedValue;
+import org.springframework.data.couchbase.core.mapping.id.GenerationStrategy;
 
 import java.util.Date;
 
 @Data
-@AllArgsConstructor
+@Document
 public class Customer {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationStrategy.UNIQUE)
+    private String id;
 
-    @Field
     private String fullName;
 
-    @Field
     private String phoneNumber;
 
-    @Field
     private String address;
 
-    @Field
     private Date registrationDate;
 
     private boolean isBusiness;
@@ -34,4 +32,14 @@ public class Customer {
 
     private BillingAccount billingAccount;
 
+    public Customer(String fullName, String phoneNumber, String address, Date registrationDate, boolean isBusiness, String status, Tariff currentTariff, BillingAccount billingAccount) {
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.registrationDate = registrationDate;
+        this.isBusiness = isBusiness;
+        this.status = status;
+        this.currentTariff = currentTariff;
+        this.billingAccount = billingAccount;
+    }
 }

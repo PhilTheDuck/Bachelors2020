@@ -8,8 +8,9 @@ import lombok.Data;
 public class Product {
 
     private String name;
-    private int amount;
-    private String description;
 
+    private String amount;
+
+    private String description;
 
 }

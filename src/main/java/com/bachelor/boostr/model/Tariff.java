@@ -1,10 +1,8 @@
 package com.bachelor.boostr.model;
 
-import com.couchbase.client.java.repository.annotation.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
@@ -12,10 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Tariff {
 
-    @Id
-    private int id;
-
-    private int tariffId;
+    private String tariffId;
 
     private String tariffName;
 
@@ -30,6 +25,5 @@ public class Tariff {
     private Boolean isDiscountable;
 
     private Price price;
-
 
 }
